@@ -13,21 +13,21 @@ public class Customers implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @Column(name = "nome",nullable = false, length = 50)
     private String name;
-    @Column(nullable = false)
+    @Column(name = "data_nascimento",nullable = false)
     private Date birth_date;
-    @Column(nullable = false, unique = true)
+    @Column(name = "email",nullable = false, unique = true, length = 50)
     private String email;
-    @Column(nullable = false, unique = true)
+    @Column(name = "CNH",nullable = false, unique = true, length = 15)
     private String driver_licence;
-    @Column(nullable = false)
+    @Column(name = "endereco",nullable = false, length = 80)
     private String adress;
-    @Column(nullable = false, unique = true)
+    @Column(name = "telefone",nullable = false, unique = true, length = 11)
     private String phone_number;
-    @Column(nullable = false)
+    @Column(name = "data_cadastro",nullable = false)
     private Date created_at;
-    @Column(nullable = false)
+    @Column(name = "ultima_atualizacao",nullable = false)
     private Date update_at;
 
     public Customers() {

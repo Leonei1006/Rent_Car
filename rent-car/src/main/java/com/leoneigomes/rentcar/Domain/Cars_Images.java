@@ -10,12 +10,12 @@ import javax.persistence.*;
 public class Cars_Images implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(nullable = false)
+    @Column(name = "id_carro", nullable = false)
     private Long car_id;
     private byte image;
-    @Column(nullable = false)
+    @Column(name ="data_cadastro", nullable = false)
     private Date created_at;
     
     public Cars_Images() {}

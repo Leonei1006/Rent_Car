@@ -10,9 +10,9 @@ public class Cars_Specifications implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, unique = true)
+    @Column(name = "id_carro",nullable = false, unique = true)
     private Long car_id;
-    @Column(nullable = false, unique = true)
+    @Column(name = "id_specificacao",nullable = false, unique = true)
     private Long specification_id;
 
     public Cars_Specifications() {

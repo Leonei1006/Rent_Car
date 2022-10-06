@@ -5,30 +5,30 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-@Table(name = "Cars")
+@Table(name = "Carros")
 @Entity
 public class Cars implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @Column(name = "nome",nullable = false, length = 20)
     private String name;
-    @Column(nullable = false)
+    @Column(name = "descicao",nullable = false)
     private String description;
-    @Column(nullable = false)
+    @Column(name = "diaria",nullable = false, length = 8)
     private double daily_rate;
-    @Column(nullable = false)
+    @Column(name = "disponibilidade",nullable = false)
     private boolean avaliable;
-    @Column(nullable = false, unique = true)
+    @Column(name = "placa_veiculo",nullable = false, unique = true, length = 8)
     private String license_plate;
-    @Column(nullable = false, unique = true)
+    @Column(name = "id_marca",nullable = false, unique = true)
     private Long brand_id;
-    @Column(nullable = false, unique = true)
+    @Column(name = "id_categoria",nullable = false, unique = true, length = 15)
     private Long category_id;
-    @Column(nullable = false)
+    @Column(name = "cor",nullable = false, length = 20)
     private String color;
-    @Column(nullable = false)
+    @Column(name ="data_cadastro", nullable = false)
     private Date created_at;
 
     public Cars() {

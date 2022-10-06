@@ -15,9 +15,9 @@ public class Brand implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @Column(name = "nome", nullable = false, length = 25)
     private String name;
-    @Column(nullable = false)
+    @Column(name = "data_cadastro",nullable = false)
     private Date created_at;
 
     public Brand() {}

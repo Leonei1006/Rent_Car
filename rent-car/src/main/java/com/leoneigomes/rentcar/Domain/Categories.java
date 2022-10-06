@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-
 @Table(name = "Categories")
 @Entity
 public class Categories implements Serializable {
@@ -14,11 +13,11 @@ public class Categories implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-    @Column(nullable = false)
+    @Column(name = "nome",nullable = false, length = 15)
     private String name;
-    @Column(nullable = false)
+    @Column(name = "descricao",nullable = false, length = 255)
     private String description;
-    @Column(nullable = false)
+    @Column(name = "data_cadastro",nullable = false)
     private Date created_at;
 
     public Categories() {}

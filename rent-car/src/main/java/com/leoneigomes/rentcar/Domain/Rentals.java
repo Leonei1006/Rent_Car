@@ -1,6 +1,7 @@
 package com.leoneigomes.rentcar.Domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.*;
@@ -17,22 +18,22 @@ public class Rentals implements Serializable {
     private Long car_id;
     @Column(nullable = false)
     private Long customer_id;
-    @Column(nullable = false)
+    @Column(name = "data_inicial",nullable = false)
     private Date start_date;
-    @Column(nullable = false)
+    @Column(name = "data_final",nullable = false)
     private Date end_date;
     @Column(nullable = false)
-    private boolean total;
-    @Column(nullable = false)
+    private BigDecimal total;
+    @Column(name = "data_cadastro",nullable = false)
     private Date created_at;
-    @Column(nullable = false)
+    @Column(name = "data_atualizacao",nullable = false)
     private Date update_at;
 
     public Rentals() {
     }
 
     public Rentals(Long id, Long car_id, Long customer_id, Date start_date,
-                   Date end_date, boolean total, Date created_at, Date update_at) {
+                   Date end_date, BigDecimal total, Date created_at, Date update_at) {
         this.id = id;
         this.car_id = car_id;
         this.customer_id = customer_id;
@@ -83,11 +84,11 @@ public class Rentals implements Serializable {
         this.end_date = end_date;
     }
 
-    public boolean isTotal() {
+    public BigDecimal isTotal() {
         return total;
     }
 
-    public void setTotal(boolean total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
 
